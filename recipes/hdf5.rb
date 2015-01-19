@@ -10,8 +10,8 @@ make_hdf5_check = node['netcdf']['hdf5']['skip_check'] ? "" : "&& make check"
 szip_location = node['netcdf']['szip']['skip'] ? "" : "--with-szlib=/usr/local"
 
 remote_file "#{Chef::Config[:file_cache_path]}/hdf5-#{hdf5_version}.tar.gz" do
-  source "http://www.hdfgroup.org/ftp/HDF5/current/src/hdf5-#{hdf5_version}.tar.gz"
-  not_if { File.exists?("/usr/local/lib/libhdf5.so") }
+  source "http://www.hdfgroup.org/ftp/HDF5/prev-releases/hdf5-#{hdf5_version}/src/hdf5-#{hdf5_version}.tar.gz"
+  not_if { File.exist?("/usr/local/lib/libhdf5.so") }
   notifies :run, "bash[install hdf5]", :immediately
 end
 
