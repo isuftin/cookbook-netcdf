@@ -10,7 +10,7 @@ szip_skip = node['netcdf']['szip']['skip']
 
 remote_file "#{Chef::Config[:file_cache_path]}/szip-#{szip_version}.tar.gz" do
   source "http://www.hdfgroup.org/ftp/lib-external/szip/#{szip_version}/src/szip-#{szip_version}.tar.gz"
-  not_if { File.exists?("/usr/local/lib/libsz.so") || szip_skip }
+  not_if { File.exist?("/usr/local/lib/libsz.so") || szip_skip }
   notifies :run, "bash[install szip]", :immediately
 end
 

@@ -8,7 +8,7 @@
 zlib_version = node['netcdf']['zlib']['version']
 remote_file "#{Chef::Config[:file_cache_path]}/zlib-#{zlib_version}.tar.gz" do
   source "http://zlib.net/zlib-#{zlib_version}.tar.gz"
-  not_if { File.exists?("/usr/local/lib/libz.so") }
+  not_if { File.exist?("/usr/local/lib/libz.so") }
   notifies :run, "bash[install zlib]", :immediately
 end
 
