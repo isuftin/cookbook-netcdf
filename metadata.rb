@@ -5,6 +5,4 @@ license          'Public Domain'
 description      'Installs/Configures netcdf'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 supports         'centos'
-source_url       'https://github.com/USGS-CIDA/cookbook-netcdf'
-issues_url       'https://github.com/USGS-CIDA/cookbook-netcdf/issues'
 version          '0.1.1'
